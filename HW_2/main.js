@@ -88,7 +88,7 @@ if (x != 0){
     console.log('Невірно')
 }
 //Task 2 :
-let time = prompt('Enter number from 0 to 59');
+let time = +prompt('Enter number from 0 to 59');
 if(time<0){
     console.log('Введіть додатнє значення')
 }else if(time>=0 && time <=15 ){
@@ -103,7 +103,7 @@ if(time<0){
     console.log('Введіть число менше за 60')
 };
 //Task 3 :
-let day = prompt('Enter number of day');
+let day = +prompt('Enter number of day');
 if (day <=0 || day>31){
     console.log('Введіть інше число, такого дня не існує')
 }else if(day>0 && day<=10 ){
@@ -139,8 +139,8 @@ switch (dayOfWeek){
         break;
 }
 //Task 5 :
-let a = prompt('Enter number 1');
-let b = prompt('Enter number 2');
+let a = +prompt('Enter number 1');
+let b = +prompt('Enter number 2');
 if (a>b){
     console.log(a)
 }else if (a==b){
@@ -148,8 +148,10 @@ if (a>b){
 }else{
     console.log(b)
 };
-//Task 6:let x = prompt();
-//Task 6 :
+//Task 6:
+let X = prompt('enter smth') || 'default';
+console.log(X);
+//Task 7 :
 let coursesAndDurationArray = [
     {title: 'JavaScript Complex', monthDuration: 5},
     {title: 'Java Complex', monthDuration: 6},
