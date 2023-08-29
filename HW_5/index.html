@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
+let S_rectangle = (a,b) => a*b;
+console.log('площа : ', S_rectangle(3,4));
+
+    // створити функцію яка обчислює та повертає площу кола з радіусом r
+    let S_circle = (r) => 3.14*r*r;
+    console.log('площа : ', S_circle(3));
+
+    // створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
+    let  S_cylinder = (h,r) =>2*3.14*r*h + 2*3.14*r*r;
+    console.log('площа : ', S_cylinder(3,5));
+
+    // створити функцію яка приймає масив та виводить кожен його елемент
+    let array = (arr) => {for (let i of arr){console.log(i)}};
+    console.log(array([2,3,4,5]))
+
+    // створити функцію яка створює параграф з текстом. Текст задати через аргумент
+    let text = (m) => `${m}`
+    console.log(text('hello'))
+
+    // створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
+    let list = (list_text) => {
+        document.write(`<ul>`)
+        for (let i = 0; i < 3; i++) {
+
+            document.write(`<li>${list_text}</li>`);
+        }
+        document.write(`<ul>`)
+    }
+    list('toooo')
+
+    // створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
+    let new_list = (list_text, n) => {
+        document.write(`<ul>`)
+        for (let i = 0; i < n; i++) {
+
+            document.write(`<li>${list_text}</li>`);
+        }
+        document.write(`<ul>`)
+    }
+    new_list('tooooot', 3);
+
+    //створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
+    let list_array =(smth) => {
+        document.write(`<ul>`)
+        for(let i of smth){
+
+            document.write(`<li>${i}</li>`);
+        }
+        document.write(`<ul>`)
+    }
+    list_array([23, 456,75,3455,0,875]);
+
+    //створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
+   let obj = (user) => {
+        for(let i =0; i<user.length; i++){
+
+            document.write(`<div>id:  ${user[i].id} name : ${user[i].name} age : ${user[i].age}</div>`);
+        }
+    }
+   obj([{id:0, name:'vasya', age:23},{id:1, name:'ne vasya', age:53},{id:2, name:'tonia', age:13},{id:3, name:'ne tonia', age:43}]);
+   document.write(obj([{id:0, name:'vasya', age:23},{id:1, name:'ne vasya', age:53},{id:2, name:'tonia', age:13},{id:3, name:'ne tonia', age:43}]))
+
+    //створити функцію яка повертає найменьше число з масиву
+    let minimum = (arr) => {
+        let a = arr[0]
+        for(let numb of arr){
+            if(a>numb){
+                a=numb;
+            }else{
+                continue;
+            }
+        }
+        console.log(a)
+    }
+   console.log(minimum([1,34,5,3,-45,125,0]));
+
+   //створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
+    let sum = (arr) => {
+        let Sum = 0;
+        for(let i of arr){
+            Sum +=i;
+        }
+        console.log(Sum);
+    }
+    console.log(sum([1, 2, 5,6]))
+    //створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
+</script>
+</body>
+</html>
