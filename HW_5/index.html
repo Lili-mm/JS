@@ -67,7 +67,7 @@ console.log('площа : ', S_rectangle(3,4));
         }
     }
    obj([{id:0, name:'vasya', age:23},{id:1, name:'ne vasya', age:53},{id:2, name:'tonia', age:13},{id:3, name:'ne tonia', age:43}]);
-   document.write(obj([{id:0, name:'vasya', age:23},{id:1, name:'ne vasya', age:53},{id:2, name:'tonia', age:13},{id:3, name:'ne tonia', age:43}]))
+   //document.write(obj([{id:0, name:'vasya', age:23},{id:1, name:'ne vasya', age:53},{id:2, name:'tonia', age:13},{id:3, name:'ne tonia', age:43}]))
 
     //створити функцію яка повертає найменьше число з масиву
     let minimum = (arr) => {
@@ -79,7 +79,7 @@ console.log('площа : ', S_rectangle(3,4));
                 continue;
             }
         }
-        console.log(a)
+        return a;
     }
    console.log(minimum([1,34,5,3,-45,125,0]));
 
@@ -89,10 +89,34 @@ console.log('площа : ', S_rectangle(3,4));
         for(let i of arr){
             Sum +=i;
         }
-        console.log(Sum);
+        return Sum;
     }
     console.log(sum([1, 2, 5,6]))
+
     //створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
+    let swap = (arr, index1, index2)=> {
+        for (let i = 0; i<arr.length; i++){
+            a = arr[index1];
+            b = arr[index2];
+            arr[index1] = b;
+            arr[index2] = a;
+        }
+        console.log(arr);
+    }
+    swap([11,22,33,44,56],0,1);
+
+    //Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
+    let exchange = (sumUAH, currencyValues,exchangeCurrency)=> {
+        for (let i of currencyValues){
+            if (i.currency === exchangeCurrency){
+                let newSum = sumUAH/i.value;
+                console.log(newSum);
+            }else {
+                continue;
+            }
+        }
+    }
+    exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD')
 </script>
 </body>
 </html>
