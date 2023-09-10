@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   let now = new Date();
+   console.log(now);
+   console.log(now.getFullYear());
+   console.log(now.getMonth());
+   console.log(now.getDay());
+   console.log(now.getHours());
+   console.log(now.getMinutes());
+   console.log(now.getSeconds());
+   console.log(now.getMilliseconds());
+   console.log(now.getTime());// мілісекунди з епохи юнікс з 01 01 1970
+
+// setTimeout(() =>{
+//   document.write(`<div>${new Date()}</div>`)
+// }, 100);
+
+
+   let date1 = new Date(1673536118048);
+   //console.log(date1)
+  let date2 = new Date("June 10 1991 12:30:34");
+  // console.log(date2)
+   let date3 = new Date(1987, 11, 12, 9, 15,12)
+   //console.log(date3)
+
+   let user1 = {
+     id: new Date().getTime(),//зробити унікальний id для користувача
+     name: 'kokos',
+     bday: new Date(1673536118048)
+   }
+   //console.log(user1);
+   let user2 = {
+     id: new Date().getTime(),//зробити унікальний id для користувача
+     name: 'kokos',
+     bday: new Date(1673536118048)
+   }
+//console.log(user2)
+
+ //Помилки :
+   console.log('start')
+   try{
+     console.log(notPresentVar);
+   }catch (error) {
+     console.log(error)
+   }finally {
+     console.log('працює за будь-яких умов')
+   }
+   console.log('end');
+//Створити помилку :
+   function foo(num1, num2){
+     if(typeof num1 === 'string' || typeof num2 === 'string'){
+       throw new Error('Тупак, введи цифри!')// використати throw
+     }
+     return num1+num2;
+   }
+   //foo(3, 'rgfkajd')
+
+   //Оператор функціональної послідовності :
+let obj = {};
+  // console.log(obj?.innerObj?.id)
+
+  const name = 'vasya'
+   const user ={
+      id: 1,
+       //name : name
+       name
+   }
+   //console.log(user)
+
+   function usergenerate(id, name, age){
+      return{id, name, age}
+   }
+   let car = {
+      id :1,
+       producer: 'subaru',
+       model : 'wrx',
+       power : 365
+   };
+  let {id, model} = car;
+ // console.log(id)
+  // console.log(model)
+
+   let car2 = {
+       id :1,
+       producer: 'vopshe',
+       model : 'dugsh',
+       power : 450
+   };
+  let{id:vId, model:vModel} = car2;
+  //console.log(vId)
+
+   let users = [
+       {name: 'vasya', age: 31, status: false},
+       {name: 'petya', age: 30, status: true},
+       {name: 'kolya', age: 29, status: true},
+       {name: 'olya', age: 28, status: false},
+       {name: 'max', age: 30, status: true},
+       {name: 'anya', age: 31, status: false},
+       {name: 'oleg', age: 28, status: false},
+       {name: 'andrey', age: 29, status: true},
+       {name: 'masha', age: 30, status: true},
+       {name: 'olya', age: 31, status: false},
+       {name: 'max', age: 31, status: true}
+   ];
+   let[a,b,c] = users;
+   console.log(a)
+
+   let User = {
+       name : 'kokos',
+       age : 123,
+   }
+   let User2 ={...User, id:2}// зробили юзур 2, який буде мати всі характеристики юзера, але це інший об'єкт
+   console.log(User2)
+
+   //копія всіх елементів в об'єкт
+   //1 спосіб json - але він не збереже функцію
+   let jsonUser = JSON.stringify(User)
+   console.log(jsonUser)
+   //let paruser = JSON.parse(User)
+   //console.log(paruser)
+
+   // 2 спосіб bject.assign
+   let assign = Object.assign({},User)
+   console.log(assign)
+
+   //structureClone поки працює в node.js
+   let clone = structuredClone(User)
+   console.log(clone)
+</script>
+</body>
+</html>
