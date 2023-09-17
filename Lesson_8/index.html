@@ -8,39 +8,113 @@
 <script>
   //Конструктори і класи
   function userFactoryFunc(id, name){
+
     return {id,name}
 
   }
 let user0 = userFactoryFunc(1, 'vasya')
  // console.log(user0);
 
-  // function User(id, name){
-  //   this.id = id;
-  //   this.name=name;
+  //******
+  //  function User(id, name){
+  //    this.id = id;
+  //    this.name=name;
   // }
   // let user = new User(1, 'Vas');
   // console.log(user)
-  function User(name, age, status, wifeName, wifeAge) {
-    this.name = name;
-    this.age = age;
-    this.status = status;
-    this.greeting = function () {
-      return `hi ${this.name}`
-    };
-    //this.wife = {name: wifeName, age: wifeAge}
+  // function User(name, age, wife){// wifeName, wifeAge) {
+  //  let {name : nameofWife} = wife;
+  //   this.name = name;
+  //   this.age = age;
+  //   this.wifeName = nameofWife;
+  //   this.greeting = function () {
+  //     console.log(`hello, my name is ${this.name}`)
+  //   };
+  //   //this.wife = {name: wifeName, age: wifeAge}
+  // }
+  //
+  // let user1 = new User('asd', 123, {name:'lida'})//'anna', 28);
+  // console.log(user1);
+  // user1.greeting()
 
+  //*****
+//   function User(id, name, age){// wifeName, wifeAge) {
+//       this.id = id;
+//       this.name = name;
+//       this.age = age;
+//       this.greeting = function () {
+//           return `hello, my name is ${this.name}`
+//       };
+//   }
+//   let user1 = new User(1, 'kokos', 23)
+// let user2 ={
+//       name: 'abrikos',
+//       age : 34,
+// }
+//   console.log(user1.greeting())
+//   console.log(user1.greeting.call(user2))
+//   console.log(user1.greeting.bind(user2)) //- робить копію
+//
+  // *******
+//   let users = [
+//       {name: 'vasya', age: 31, status: false},
+//       {name: 'petya', age: 30, status: true},
+//       {name: 'kolya', age: 29, status: true},
+//       {name: 'olya', age: 28, status: false},
+//       {name: 'max', age: 30, status: true},
+//       {name: 'anya', age: 31, status: false},
+//       {name: 'oleg', age: 28, status: false},
+//       {name: 'andrey', age: 29, status: true},
+//       {name: 'masha', age: 30, status: true},
+//       {name: 'olya', age: 31, status: false},
+//       {name: 'max', age: 31, status: true}
+//   ];
+// Array.prototype.print = function (){
+//     for(const item of this){
+//         console.log(item)
+//     }
+// }
+// users.print()
+//   let numbers = [11, 22, 33, 44, 55, 66];
+// numbers.print()
+//
+//   let array = [11,22,33,44]
+// array.print();
+
+  //*****
+  function Car(model, power){
+      this.model = model;
+      this.power = power;
   }
 
-  let user1 = new User('asd', 123, true)//'anna', 28);
-  console.log(user1);
-
-  let user2 = {
-    name: 'khkdfj',
-    age : 678
+  Car.prototype.info = function (){
+      console.log(`model - ${this.model}, power - ${this.power}`)
   }
-  let greeting =user1.greeting.bind(user2)
-  console.log(greeting)
-  //greeting.call(user2)  -
+  let car = new Car('legacy', 164)
+  car.info()
+
+  //**** класи
+  class User{
+      constructor(id, name) {
+          this.id = id;
+          this.name = name;
+      }
+      greeting(){
+          console.log(`hello my name is ${this.name}`)
+      }
+  }
+
+  let user = new User(111, 'vasya')
+  console.log(user);
+  user.greeting()
+
+  class Customer extends User{
+      constructor(id, name, products) {
+          super(id, name);
+          this.products = products;
+      }
+  }
+ let cust = new Customer(1, 'kokos', [])
 </script>
 </body>
 </html>
