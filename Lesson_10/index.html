@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" name="f1">
+   <input type="text" name="product">
+    <input type="number" name="price">
+    <button>save</button>
+</form>
+
+<script>
+    localStorage.setItem('products', JSON.stringify([]))
+    let f1 = document.forms.f1
+    f1.onsubmit = function (e){
+        e.preventDefault()
+        let product = {
+            title: this.title.value,
+            price: this.price.value
+        }
+        console.log(product)
+        local
+    }
+
+   //let arrayWithDat =JSON.parse(localStorage.getItem('array')) || []
+    //console.log(arrayWithDat);
+   // console.log(document.forms[0])
+// let f1Ref = document.forms.f1
+// console.log(f1Ref)
+// console.log(f1Ref.login);
+// console.log(f1Ref.password);
+//
+// let login = f1Ref.login;
+// console.log(login)
+// console.log(login.value)
+
+</script>
+</body>
+</html>
